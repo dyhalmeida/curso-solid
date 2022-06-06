@@ -1,32 +1,33 @@
-import { Order } from './entity/single-responsibility-principle/order'
-import { Item } from './entity/single-responsibility-principle/item'
-import { EmailService } from './entity/single-responsibility-principle/email-service'
+import singleResponsibilityPrinciple from './entity/single-responsibility-principle'
+import { mainWithoutOCP, mainWithOCP } from './entity/open-closed-principle'
+import { mainWithoutLSP, mainWithLSP } from './entity/liskov-substitution-principle'
+import { mainWithoutISP, mainWithISP } from './entity/interface-segregation-pricinple'
+import { mainWithoutDSP, mainWithDSP } from './entity/dependency-inversion-principle'
 
-const item1 = new Item()
-item1.name = 'Camisa 01'
-item1.value = 33.90
+// singleResponsibilityPrinciple()
 
-const item2 = new Item()
-item2.name = 'Camisa 02'
-item2.value = 35.99
+/**
+ * Example Open Closed Principle
+ */
+// mainWithOCP()
 
-const order = new Order()
 
-order.shoopingCart.addItem(item1)
-order.shoopingCart.addItem(item2)
+/**
+ * Example Liskov Substitution Principle
+ */
+// mainWithoutLSP()
+// mainWithLSP()
 
-console.log(order)
-console.log(order.shoopingCart.getItens())
-const amount = order.shoopingCart.getItens().reduce((acc, item) => {
-  acc += item.value
-  return acc
-}, 0)
 
-console.log('Order amount: ',amount)
-console.log('Cart is valid? ', order.shoopingCart.isValid())
-console.log('Order status: ', order.status)
+/**
+ * Example Interface Segregation Principle
+ */
+//  mainWithoutISP()
+//  mainWithISP()
 
-if (order.close()) {
-  console.log('Order OK...')
-  EmailService.send()
-}
+
+/**
+ * Example Dependency inversion principle
+ */
+// mainWithoutDSP()
+mainWithDSP()

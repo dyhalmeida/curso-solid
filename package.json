@@ -5,14 +5,11 @@
   "author": "Diego Almeida <dyhalmeida@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_ENV=development webpack --progress --watch",
-    "prod": "NODE_ENV=production webpack --progress --watch",
-    "server": "live-server --port=8080 --host=localhost public"
+    "dev": "ts-node-dev src/index.ts"
   },
   "devDependencies": {
-    "ts-loader": "^9.2.8",
-    "typescript": "^4.6.3",
-    "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2"
+    "@types/node": "^17.0.23",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.3"
   }
 }
